@@ -54,6 +54,8 @@ Also, please let us know upfront whether you would like detailed feedback (what 
 
 ## Solution
 
+Live demo: https://ggylyon.github.io/wwt-frontend-tech-task/
+
 ### Structure
 
 The code follows a light Feature-Sliced Design layout:
@@ -80,6 +82,7 @@ The code follows a light Feature-Sliced Design layout:
 - No new dependencies were installed
 - `vite.config.ts` got an explicit `@` alias because `vite-tsconfig-paths` did not resolve `@/*` imports
 - The GitHub Action checks formatting, lint, unit tests (`vitest`) and build on Node.js 20 and 22; pnpm version is pinned via `packageManager`
+- `deploy.yml` builds the app with the repository base path and publishes it to GitHub Pages on every push to `main`
 
 ## How to set up the project
 
