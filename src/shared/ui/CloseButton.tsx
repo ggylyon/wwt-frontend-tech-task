@@ -6,7 +6,7 @@ export const CloseButton = ({
 }: Omit<ComponentPropsWithoutRef<'button'>, 'children'>) => (
 	<button
 		type="button"
-		className={`flex size-10 cursor-pointer items-center justify-center rounded-full text-gray-900 transition-colors hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-primary ${className}`}
+		className={`flex size-10 cursor-pointer items-center justify-center rounded-full text-black transition-colors hover:bg-grey-100 focus-visible:outline-2 focus-visible:outline-brand-200 ${className}`}
 		{...props}
 	>
 		<svg

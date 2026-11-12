@@ -24,23 +24,23 @@ export const ConfirmDialog = ({
 		<Dialog
 			labelledBy={titleId}
 			onClose={onDismiss}
-			className="max-w-[1280px]"
 		>
-			<div className="relative flex flex-col items-center gap-12 px-6 py-16 sm:px-10 sm:py-24">
+			<div className="relative flex h-full flex-col px-5 pt-8 pb-6 md:px-8 md:pt-10 md:pb-10">
 				<CloseButton
 					aria-label={t('confirm.close')}
-					className="absolute top-6 right-6"
+					className="absolute top-6 right-3 md:top-8 md:right-6"
 					onClick={onDismiss}
 				/>
+				{/* "Headline 2": Inter Medium 40px */}
 				<h2
 					id={titleId}
-					className="text-center text-3xl font-medium sm:text-[40px] sm:leading-tight"
+					className="px-10 text-center text-[32px] leading-tight font-medium md:text-[40px]"
 				>
 					{t('confirm.title')}
 				</h2>
-				<div className="flex w-full flex-col-reverse justify-center gap-4 sm:flex-row sm:gap-8">
+				<div className="mt-auto flex flex-col gap-4 pt-8 md:mt-16 md:flex-row md:justify-center md:gap-8 md:pt-0">
 					<Button
-						variant="outline"
+						variant="secondary"
 						onClick={onDiscard}
 					>
 						{t('confirm.discard')}

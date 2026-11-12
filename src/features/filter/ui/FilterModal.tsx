@@ -55,7 +55,7 @@ export const FilterModal = ({ onClose }: FilterModalProps) => {
 			return (
 				<p
 					role="status"
-					className="py-16 text-center text-gray-500"
+					className="py-16 text-center text-grey-300"
 				>
 					{t('loading')}
 				</p>
@@ -68,9 +68,9 @@ export const FilterModal = ({ onClose }: FilterModalProps) => {
 					role="alert"
 					className="flex flex-col items-center gap-4 py-16 text-center"
 				>
-					<p className="text-gray-700">{t('error')}</p>
+					<p className="text-grey-400">{t('error')}</p>
 					<Button
-						variant="outline"
+						variant="secondary"
 						onClick={() => refetch()}
 					>
 						{t('retry')}
@@ -93,47 +93,49 @@ export const FilterModal = ({ onClose }: FilterModalProps) => {
 		<Dialog
 			labelledBy={titleId}
 			onClose={onClose}
-			className="max-w-[1280px]"
 		>
-			<div className="flex max-h-[calc(100dvh-2rem)] flex-col">
-				<header className="relative mx-6 border-b border-gray-200 pt-10 pb-6 sm:mx-10">
+			{/* Side paddings follow the popup grids: 20px on mobile (375), 32px on desktop (1280) */}
+			<div className="flex h-full flex-col md:max-h-[calc(100dvh-4rem)]">
+				<header className="relative mx-5 border-b border-grey-200 pt-8 pb-6 md:mx-8 md:pt-10">
+					{/* "Headline 2": Inter Medium 40px */}
 					<h2
 						id={titleId}
-						className="text-center text-3xl font-medium sm:text-[40px] sm:leading-tight"
+						className="px-10 text-center text-[32px] leading-tight font-medium md:text-[40px]"
 					>
 						{t('title')}
 					</h2>
 					<CloseButton
 						aria-label={t('close')}
-						className="absolute top-6 -right-2"
+						className="absolute top-6 -right-2 md:top-8"
 						onClick={onClose}
 					/>
 				</header>
 
 				<form
 					id={formId}
-					className="min-h-0 flex-1 overflow-y-auto px-6 sm:px-10"
+					className="min-h-0 flex-1 overflow-y-auto px-5 md:px-8"
 					onSubmit={handleSubmit}
 				>
 					{renderContent()}
 				</form>
 
-				<footer className="mx-6 grid grid-cols-1 items-center gap-4 border-t border-gray-200 py-8 sm:mx-10 sm:grid-cols-[1fr_auto_1fr]">
-					<Button
-						type="submit"
-						form={formId}
-						disabled={!filterItems}
-						className="sm:col-start-2"
-					>
-						{t('apply')}
-					</Button>
+				<footer className="mx-5 flex flex-col gap-4 border-t border-grey-200 py-6 md:mx-8 md:grid md:grid-cols-[1fr_auto_1fr] md:items-center md:py-8">
+					{/* "Hyper link button": Inter Medium 16px, primary.100 */}
 					<button
 						type="button"
-						className="cursor-pointer justify-self-center text-base font-medium text-gray-900 underline underline-offset-4 hover:text-primary focus-visible:outline-2 focus-visible:outline-primary sm:justify-self-end"
+						className="min-h-14 cursor-pointer self-center text-base font-medium text-primary-100 underline underline-offset-4 transition-opacity hover:opacity-80 focus-visible:outline-2 focus-visible:outline-brand-200 md:col-start-3 md:row-start-1 md:min-h-0 md:justify-self-end"
 						onClick={() => setSelection({})}
 					>
 						{t('clear')}
 					</button>
+					<Button
+						type="submit"
+						form={formId}
+						disabled={!filterItems}
+						className="md:col-start-2 md:row-start-1"
+					>
+						{t('apply')}
+					</Button>
 				</footer>
 			</div>
 

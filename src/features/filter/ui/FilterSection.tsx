@@ -13,15 +13,17 @@ export const FilterSection = ({
 	selection,
 	onToggle
 }: FilterSectionProps) => (
-	<fieldset className="border-b border-gray-200 py-8 last:border-b-0">
+	<fieldset className="border-b border-grey-200 py-6 last:border-b-0 md:py-8">
 		<legend className="sr-only">{item.name}</legend>
+		{/* "Body text 3": Inter Medium 20px */}
 		<h3
 			aria-hidden="true"
-			className="mb-6 text-2xl font-medium"
+			className="mb-4 text-xl leading-7 font-medium md:mb-6"
 		>
 			{item.name}
 		</h3>
-		<ul className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
+		{/* Popup grid: 12 columns, gutter 32px — every option spans 4 columns */}
+		<ul className="grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2 md:grid-cols-3 md:gap-y-6">
 			{item.options.map(option => (
 				<li key={option.id}>
 					<Checkbox

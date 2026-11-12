@@ -13,7 +13,7 @@ export const App = () => {
 
 	return (
 		<main className="mx-auto flex min-h-dvh w-full max-w-5xl flex-col items-center gap-10 px-4 py-16">
-			<h1 className="text-center text-4xl text-gray-600 sm:text-6xl">
+			<h1 className="text-center text-4xl text-grey-500 sm:text-6xl">
 				{t('title')}
 			</h1>
 
@@ -34,7 +34,7 @@ export const App = () => {
 				>
 					{t('selectedFilter')}
 				</h2>
-				<pre className="overflow-x-auto rounded-lg bg-gray-100 p-4 text-sm">
+				<pre className="overflow-x-auto rounded-lg bg-grey-100 p-4 text-sm">
 					<code>{JSON.stringify(filter, null, 2)}</code>
 				</pre>
 			</section>

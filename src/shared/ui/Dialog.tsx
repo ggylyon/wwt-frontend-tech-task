@@ -11,6 +11,8 @@ interface DialogProps {
  * Modal built on the native `<dialog>` element: focus trap, `Esc` handling,
  * top-layer stacking and `inert` background come from the browser.
  * Mount it to open, unmount it to close.
+ *
+ * Mobile: full-screen popup. From `md`: centered popup, max 1280px wide.
  */
 export const Dialog = ({
 	labelledBy,
@@ -35,7 +37,7 @@ export const Dialog = ({
 			ref={dialogRef}
 			aria-labelledby={labelledBy}
 			aria-modal="true"
-			className={`m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] overflow-hidden rounded-2xl bg-white p-0 text-gray-900 shadow-xl backdrop:bg-black/50 ${className}`}
+			className={`m-0 h-dvh max-h-none w-full max-w-none overflow-hidden bg-white p-0 text-black backdrop:bg-black/40 md:m-auto md:h-auto md:max-h-[calc(100dvh-4rem)] md:w-[calc(100%-4rem)] md:max-w-7xl md:rounded-xl md:shadow-xl ${className}`}
 			onCancel={event => {
 				event.preventDefault()
 				onClose()

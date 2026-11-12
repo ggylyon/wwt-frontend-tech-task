@@ -5,13 +5,14 @@ interface CheckboxProps
 	label: ReactNode
 }
 
+/** Label uses "Body text 6": Inter Regular 16px */
 export const Checkbox = ({
 	label,
 	className = '',
 	...props
 }: CheckboxProps) => (
 	<label
-		className={`flex cursor-pointer items-start gap-4 text-base leading-6 ${className}`}
+		className={`flex cursor-pointer items-start gap-3 text-base leading-6 font-normal text-black ${className}`}
 	>
 		<input
 			type="checkbox"
@@ -20,7 +21,7 @@ export const Checkbox = ({
 		/>
 		<span
 			aria-hidden="true"
-			className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded border border-gray-400 bg-white text-white transition-colors peer-checked:border-gray-900 peer-checked:bg-gray-900 peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-primary peer-checked:[&>svg]:opacity-100"
+			className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-sm border border-grey-400 bg-white text-white transition-colors peer-hover:border-black peer-checked:border-black peer-checked:bg-black peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-brand-200 peer-checked:[&>svg]:opacity-100"
 		>
 			<svg
 				viewBox="0 0 16 16"
