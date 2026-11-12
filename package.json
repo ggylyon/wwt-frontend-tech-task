@@ -1,6 +1,7 @@
 {
 	"name": "WinWinTravel frontend test task",
 	"private": true,
+	"packageManager": "pnpm@9.15.9",
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
@@ -14,6 +15,7 @@
 		"preview": "vite preview",
 		"prepare": "husky install",
 		"test": "vitest",
+		"test:run": "vitest run",
 		"coverage": "vitest run --coverage"
 	},
 	"dependencies": {
