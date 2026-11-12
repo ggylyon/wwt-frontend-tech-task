@@ -52,6 +52,35 @@ If you install any new technology, describe why you added it and what it’s use
 
 Also, please let us know upfront whether you would like detailed feedback (what exactly was wrong and a score), or if a simple acceptance or rejection response is sufficient
 
+## Solution
+
+### Structure
+
+The code follows a light Feature-Sliced Design layout:
+
+- `src/pages/Home` — homepage with the "Open filter" button and the debug JSON output
+- `src/features/filter` — filter modal, confirmation dialog and the `react-query` hook that loads `FilterItem[]`
+- `src/entities/filter` — `zustand` store with the saved `SearchRequestFilter` and pure helpers that convert between the draft selection and `SearchRequestFilter`
+- `src/shared/api/filter` — mocked API request (reads `filterData.json` with a small delay) and query keys
+- `src/shared/ui` — reusable `Button`, `Checkbox`, `CloseButton` and `Dialog`
+
+### Behaviour
+
+- The modal is pre-filled from the store every time it opens; edits live in a local draft
+- `Apply` opens the confirmation dialog:
+  - `Apply new filter` saves the draft to the store and closes both dialogs
+  - `Use old filter` drops the draft and keeps the previously saved data
+  - Closing the confirmation (cross, `Esc`, backdrop) returns to the filter modal
+- `Clear all parameters` resets the draft; nothing is saved until confirmed
+- Only filters with selected options get into `SearchRequestFilter`; order follows the API data
+
+### Notes
+
+- Dialogs use the native `<dialog>` element (`showModal`), which gives focus trapping, `Esc` handling and top-layer stacking without extra libraries
+- No new dependencies were installed
+- `vite.config.ts` got an explicit `@` alias because `vite-tsconfig-paths` did not resolve `@/*` imports
+- The GitHub Action checks formatting, lint, unit tests (`vitest`) and build on Node.js 20 and 22; pnpm version is pinned via `packageManager`
+
 ## How to set up the project
 
 All scripts described below (except for _**dependency installation**_) can be used with pnpm instead of npm. They work the same way
