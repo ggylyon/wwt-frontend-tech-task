@@ -42,7 +42,6 @@ module.exports = {
 			}
 		],
 
-		/* Arrow functions */
 		'prefer-arrow/prefer-arrow-functions': [
 			'error',
 			{
@@ -54,7 +53,6 @@ module.exports = {
 		'prefer-arrow-callback': ['error', { allowNamedFunctions: true }],
 		'func-style': ['error', 'expression', { allowArrowFunctions: true }],
 
-		/* Other rules */
 		'array-callback-return': 'error',
 		'no-await-in-loop': 'error',
 		'no-constant-binary-expression': 'error',
@@ -76,7 +74,6 @@ module.exports = {
 		'no-multi-str': 'error',
 		'no-implicit-coercion': 'error',
 
-		/* i18next */
 		'i18next/no-literal-string': [
 			'error',
 			{

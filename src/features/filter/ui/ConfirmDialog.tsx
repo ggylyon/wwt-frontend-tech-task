@@ -4,11 +4,8 @@ import { useTranslation } from 'react-i18next'
 import { Button, CloseButton, Dialog } from '@/shared/ui'
 
 interface ConfirmDialogProps {
-	/** Return to editing without a decision */
 	onDismiss: () => void
-	/** Keep the previously saved filter */
 	onDiscard: () => void
-	/** Save the new filter */
 	onConfirm: () => void
 }
 
@@ -31,7 +28,6 @@ export const ConfirmDialog = ({
 					className="absolute top-6 right-3 md:top-8 md:right-6"
 					onClick={onDismiss}
 				/>
-				{/* "Headline 2": Inter Medium 40px */}
 				<h2
 					id={titleId}
 					className="px-10 text-center text-[32px] leading-tight font-medium md:text-[40px]"

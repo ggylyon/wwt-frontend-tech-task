@@ -31,7 +31,6 @@ export const FilterModal = ({ onClose }: FilterModalProps) => {
 		refetch
 	} = useFilterItemsQuery()
 
-	// Draft is pre-filled with the saved filter and lives only while the modal is mounted
 	const [selection, setSelection] = useState(() => toSelection(savedFilter))
 	const [isConfirmOpen, setIsConfirmOpen] = useState(false)
 
@@ -94,10 +93,8 @@ export const FilterModal = ({ onClose }: FilterModalProps) => {
 			labelledBy={titleId}
 			onClose={onClose}
 		>
-			{/* Side paddings follow the popup grids: 20px on mobile (375), 32px on desktop (1280) */}
 			<div className="flex h-full flex-col md:max-h-[calc(100dvh-4rem)]">
 				<header className="relative mx-5 border-b border-grey-200 pt-8 pb-6 md:mx-8 md:pt-10">
-					{/* "Headline 2": Inter Medium 40px */}
 					<h2
 						id={titleId}
 						className="px-10 text-center text-[32px] leading-tight font-medium md:text-[40px]"
@@ -120,7 +117,6 @@ export const FilterModal = ({ onClose }: FilterModalProps) => {
 				</form>
 
 				<footer className="mx-5 flex flex-col gap-4 border-t border-grey-200 py-6 md:mx-8 md:grid md:grid-cols-[1fr_auto_1fr] md:items-center md:py-8">
-					{/* "Hyper link button": Inter Medium 16px, primary.100 */}
 					<button
 						type="button"
 						className="min-h-14 cursor-pointer self-center text-base font-medium text-primary-100 underline underline-offset-4 transition-opacity hover:opacity-80 focus-visible:outline-2 focus-visible:outline-brand-200 md:col-start-3 md:row-start-1 md:min-h-0 md:justify-self-end"

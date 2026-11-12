@@ -12,7 +12,6 @@ const variantClassNames: Record<ButtonVariant, string> = {
 		'border border-grey-200 bg-white text-black hover:border-grey-300 hover:bg-grey-100'
 }
 
-/** "Button" text style: Inter Semibold 16px */
 export const Button = ({
 	variant = 'primary',
 	type = 'button',

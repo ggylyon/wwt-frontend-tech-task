@@ -7,13 +7,6 @@ interface DialogProps {
 	children: ReactNode
 }
 
-/**
- * Modal built on the native `<dialog>` element: focus trap, `Esc` handling,
- * top-layer stacking and `inert` background come from the browser.
- * Mount it to open, unmount it to close.
- *
- * Mobile: full-screen popup. From `md`: centered popup, max 1280px wide.
- */
 export const Dialog = ({
 	labelledBy,
 	onClose,
@@ -43,7 +36,6 @@ export const Dialog = ({
 				onClose()
 			}}
 			onClick={event => {
-				// Click on the backdrop: content is wrapped, so only the backdrop targets the dialog itself
 				if (event.target === event.currentTarget) {
 					onClose()
 				}

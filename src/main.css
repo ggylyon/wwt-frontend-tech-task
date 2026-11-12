@@ -1,7 +1,6 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
-/* Design tokens from the "Ready for the dev" Figma page */
 @theme {
 	--font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
 

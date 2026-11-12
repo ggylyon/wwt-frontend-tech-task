@@ -5,7 +5,6 @@ interface CheckboxProps
 	label: ReactNode
 }
 
-/** Label uses "Body text 6": Inter Regular 16px */
 export const Checkbox = ({
 	label,
 	className = '',

@@ -1,7 +1,6 @@
 import { type FilterItem, FilterType } from '@/shared/api/types/Filter'
 import type { SearchRequestFilter } from '@/shared/api/types/SearchRequest/SearchRequestFilter'
 
-/** Selected option ids grouped by filter id — the modal's working (draft) state */
 export type FilterSelection = Record<string, string[]>
 
 export const toSelection = (filter: SearchRequestFilter): FilterSelection =>
@@ -26,11 +25,6 @@ export const toggleOption = (
 	return { ...selection, [filterId]: next }
 }
 
-/**
- * Converts the draft selection to the API output format.
- * Filters and options keep the order from the API, unknown ids and
- * filters without selected options are dropped.
- */
 export const toSearchRequestFilter = (
 	selection: FilterSelection,
 	filterItems: FilterItem[]
